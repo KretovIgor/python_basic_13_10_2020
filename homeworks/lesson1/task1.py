@@ -1,0 +1,6 @@
+name = input('Ваше имя\n>>>')
+surname = input('Ваша фамилия\n>>>')
+money_all = input('Сколько было у денег в кошельке до похода в магазин?\n>>>')
+money_spend = input('Сколько потратили в магазине денег?\n>>>')
+money_balance = float(money_all) - float(money_spend)
+print (name, surname, ', в вашем кошельке осталось', money_balance, 'рублей!')
