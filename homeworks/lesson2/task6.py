@@ -25,12 +25,12 @@ while True:
         break
     numeric += 1
     if control == 'A'.lower():
-        print(f'Аналитика \n {"-"}')
+        print(f'\n Аналитика \n {"-"}')
         for key, value in analytics.items():
             print(f'{key}, {value}')
-            print("-")
+            print(" -")
     for f in features.keys():
         feature_ = input(f'Введите "{f}" товара ')
         features[f] = feature_ if (f == 'название' or f == 'количество') else feature_
         analytics[f].append(features[f])
-    goods.append((numeric, features))
+goods.append((numeric, features))
