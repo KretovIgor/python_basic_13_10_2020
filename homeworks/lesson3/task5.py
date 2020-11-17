@@ -10,23 +10,24 @@
 """
 
 
-def sum(*args):
-    result = 0
-    for itm in args:
-        try:
-            result += int(itm)
-        except ValueError:
-            if itm == 'q':
-                print('До свидания')
-                exit(sum())
-    return result
+def sum(numb_sum, input_string):
+    input_list = input_string.split()
+    for string_number in input_list:
+        if string_number == "q":
+            return numb_sum
+        numb_sum += float(string_number)
+    return numb_sum
 
 
-user_sum = 0
+summary = 0
+
 while True:
-    user_input = input('Введите числа через пробел.'
-                       ' Для остановки программы введите q '.lower()).split(' ')
-    result_sum = sum(*user_input)
-    user_sum += result_sum
-    print(sum(*user_input))
-    print(f'Сумма чисел составляет: {sum}')
+    print(f"Сумма в настоящий момент {summary}")
+    try:
+        numbers = input("Введите числа через пробел или Q для выхода:  ".lower())
+    except ValueError:
+        print('Вводите числа!')
+    summary = sum(summary, numbers)
+    if "q" in numbers:
+        print(f"Итоговое значение: {summary}")
+        break
